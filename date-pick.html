@@ -1,0 +1,47 @@
+<template name="datePick">
+    <div class="dropdown">
+                    <span class="dropdown-toggle" type="button" id="datePicker" data-toggle="dropdown"
+                          aria-haspopup="true" aria-expanded="true">
+                        {{selectedFormatedDate}}
+                    </span>
+        <ul class="dropdown-menu" aria-labelledby="datePicker">
+            <table class="table-hover table-condensed">
+                <thead>
+                <tr>
+                    <th id="setPrevMonth" class="month-switch">&lt;&lt;</th>
+                    <th colspan="5" style="text-align: center">
+                        <div class="dropdown">
+                    <span class="dropdown-toggle" type="button" id="monthListMenu" data-toggle="dropdown"
+                          aria-haspopup="true" aria-expanded="true">
+                        {{monthName}}
+                    </span>
+                            <ul id="monthslist" class="dropdown-menu" aria-labelledby="monthListMenu">
+                                {{#each months}}
+                                    <li class="month-entry"><a href="#">{{name}}</a></li>
+                                {{/each}}
+                            </ul>
+                        </div>
+
+                    </th>
+                    <th id="setNextMonth" class="month-switch">&gt;&gt;</th>
+                </tr>
+                <tr>
+                    {{#each weekDays}}
+                        <th>{{dayName}}</th>
+                    {{/each}}
+                </tr>
+                </thead>
+                <tbody>
+                {{#each weeks}}
+                    <tr>
+                        {{#each days}}
+                            <!--we have to pass the template object to isSelected ../.. is the way to do it-->
+                            <td class="{{class}} {{isSelected ../..}}">{{day}}</td>
+                        {{/each}}
+                    </tr>
+                {{/each}}
+                </tbody>
+            </table>
+        </ul>
+    </div>
+</template>

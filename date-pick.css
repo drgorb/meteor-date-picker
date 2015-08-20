@@ -1,0 +1,19 @@
+.month-switch{
+    cursor: pointer;
+}
+.prev-month, .next-month {
+    text-align: center;
+    color: dimgray;
+    cursor: pointer;
+}
+
+.current-month {
+    text-align: center;
+    color: black;
+    cursor: pointer;
+}
+
+.selected-date {
+    background: lightskyblue;
+    border-radius: 4px;
+}
